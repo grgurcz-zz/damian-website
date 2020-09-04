@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;500;800&display=swap">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="jquery.scrollify.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.3/ScrollMagic.js"></script>
+    <script src="jAnimtimes.js"></script>
+    <script>
+        $(window).on('beforeunload', function() {
+            $('body').hide();
+            $(window).scrollTop(0);
+        });
+
+        $(function() {
+            $.scrollify({
+                section : ".page",
+                easing: "easeOutExpo",
+                scrollSpeed: 1200,
+                scrollbars: false,
+                standardScrollElements: "",
+                updateHash: false,
+                touchScroll:true,
+                before:function() {},
+                after:function() {},
+                afterResize:function() {},
+                afterRender:function() {}
+              });
+        });
+
+        function scrollPage(index){
+            $.scrollify.move(index);
+        }
+    </script>
+    <title>Damian Hutinec</title>
+</head>
+
+<body onload="animateHTML().init()">
+    <div class="nav-bar">
+        <button class="nav-button text-color" onclick="scrollPage(0)">HOME</button>
+        <button class="nav-button text-color" onclick="scrollPage(1)">ABOUT</button>
+        <button class="nav-button text-color" onclick="scrollPage(2)">WORK</button>
+        <button class="nav-button text-color" onclick="scrollPage(3)">CONTACT</button>
+    </div>
+    <div class="burger-back">
+        <div class="burger">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
+    </div>
+    <div class="page page1">
+        <div class="bkground"></div>
+        <p class="title-name text-color">DAMIAN HUTINEC</p>
+        <div class="job-wrapper">
+            <p class="jobs text-color">EDITING / VFX / COLOR / SOUND</p>
+        </div>
+    </div>
+    <div class="page page2">
+        <p class="title-about text-color">ABOUT ME</p>
+        <div class="about-text">
+            <p class="about-p text-weight">Hey!
+My name is Damian and I'm a professional video editor for over 6 years now. I have worked on hundreds of projects for big companies and YouTubers.<br>
+I am "made in Croatia" but I can fluently speak both English and German and I know a little bit of Spanish as well so I don't think communication should be a problem here.<br><br>
+For most of my editing I use Adobe AE and I have been using it for a long time. I also combine other Adobe products to enhance my editing.<br>
+</p>
+        </div>
+        <div class="skills-list">
+            <div class="skill">
+                <p class="introduction text-color">Video Editing</p>
+                <div class="skill-bar">
+                    <span class="hidden" style="width: 95%" />
+                </div>
+            </div>
+            <div class="skill">
+                <p class="introduction text-color">After Effects</p>
+                <div class="skill-bar">
+                    <span class="hidden" style="width: 95%" />
+                </div>
+            </div>
+            <div class="skill">
+                <p class="introduction text-color">Coloring</p>
+                <div class="skill-bar">
+                    <span class="hidden" style="width: 87%" />
+                </div>
+            </div>
+            <div class="skill">
+                <p class="introduction text-color">Motion Graphics</p>
+                <div class="skill-bar">
+                    <span class="hidden" style="width: 82%" />
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="page page3">
+        <video class="show" muted autoplay>
+            <source src="video/red.mp4" type="video/mp4">
+            <source src="video/reds.mp4" type="video/mp4">
+        </video>
+    </div>
+    <div class="page page4">
+        <div class="one"></div>
+        <div class="contact-wrapper">
+            <p class="contact text-color-two">GET IN TOUCH</p>
+        </div>
+        <div class="socials">
+            <img src="logo/Instagram%20-%20W.png" class="soc-icons"><a href="https://www.instagram.com/damian_hutinec/" target="_blank" class="social-link text-weight ig">Instagram</a><a href="https://linkedin.com/in/damian-hutinec-b7aa201b0/" target="_blank" class="lin"><img src="logo/LinkedIn%20-%20W.png" class="soc-icons linked" href="https://linkedin.com/in/damian-hutinec-b7aa201b0/"></a>
+            <a href="https://linkedin.com/in/damian-hutinec-b7aa201b0/" target="_blank"  class="social-link text-weight lin">LinkedIn</a><img src="logo/Facebook%20-%20W.png" class="soc-icons"><a href="mailto:damian.hutinec@gmail.com" class="social-link text-weight mail">Mail</a>
+
+        </div>
+    </div>
+</body>
+    <script src="responsive.js"></script>
+    <script type="text/javascript">
+
+$(function() {
+    $(document).on("click", ".nav-bar > .nav-button", function() {
+        $(".nav-bar").removeClass("nav-active");
+        $(".burger-back > .burger").removeClass("toggle");
+        $(".nav-button").css("animation", "");
+        $(".burger-back").removeClass("burger-active")
+    });
+});</script>
+</html>
